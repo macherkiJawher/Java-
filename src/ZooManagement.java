@@ -1,25 +1,20 @@
-import java.util.Scanner;
-
 public class ZooManagement {
-    int nbrCages;
-    String zooName;
-
-
     public static void main(String[] args) {
-        // ZooManagement zoo = new ZooManagement();
-        // System.out.println(zoo.zooName + " comporte " + zoo.nbrCages + " cages");
+        // Création de plusieurs animaux avec le constructeur paramétré
+        Animal lion = new Animal("Felidae", "Lion", 5, true);
+        Animal elephant = new Animal("Elephantidae", "Elephant", 10, false);
 
-        Scanner scanner = new Scanner(System.in);
+        // Création d'un zoo (myZoo)
+        Zoo myZoo = new Zoo("My Zoo", "Paris", 25);
 
-        System.out.print("Entrez le nom du zoo : ");
-        String zooName = scanner.nextLine();
+        // Ajouter des animaux au zoo
+        myZoo.animals[0] = lion;
+        myZoo.animals[1] = elephant;
 
-        System.out.print("Entrez le nombre de cages : ");
-        int nbrCages = scanner.nextInt();
 
-        System.out.println(zooName + " comporte " + nbrCages + " cages");
+        myZoo.displayZoo();
+        System.out.println(lion);
+        System.out.println(myZoo);
 
-        scanner.close();
     }
-
 }
